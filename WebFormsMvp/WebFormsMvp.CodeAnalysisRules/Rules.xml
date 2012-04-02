@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+  Check ids are allocated using a specific formula - please follow it.
+  
+  All check ids are MVP, followed by a 4 digit number:         
+                                                               MVPxxxx
+  The first digit specifies the style of the rule  ═══════════════╝║╚╣
+    1) Naming                                                      ║ ║
+    2) Design                                                      ║ ║
+                                                                   ║ ║
+  The second digit specifies the target of the rule  ══════════════╝ ║
+    1) Presenter                                                     ║
+    2) View interface                                                ║
+    3) View model                                                    ║
+                                                                     ║
+  The last two digits are just sequential, starting at 01  ══════════╝
+
+-->
+<Rules FriendlyName="ASP.NET Web Forms Model-View-Presenter Rules">
+  <Rule TypeName="PresentersShouldHaveCorrectSuffix" Category="WebFormsMvp.Naming" CheckId="MVP1101">
+    <Name>Presenters should have correct suffix</Name>
+    <Description>All presenter implementations should have their type name suffixed with the word 'Presenter'. For example, 'LoginPresenter'.</Description>
+    <Url>http://wiki.webformsmvp.com/index.php?title=CodeAnalysis:MVP1101</Url>
+    <Resolution>The name of type {0} does not end with the suffix 'Presenter'. Add the suffix to the type name.</Resolution>
+    <Email></Email>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>Breaking</FixCategories>
+    <Owner />
+  </Rule>
+  <Rule TypeName="PresentersShouldHaveDescriptiveNames" Category="WebFormsMvp.Naming" CheckId="MVP1102">
+    <Name>Presenters should have descriptive names</Name>
+    <Description>All presenter implementations should have a type name that describes their function. For example, 'LoginPresenter'.</Description>
+    <Url>http://wiki.webformsmvp.com/index.php?title=CodeAnalysis:MVP1102</Url>
+    <Resolution>The name of type {0} does not describe the presenter's function. Use a more descriptive name.</Resolution>
+    <Email></Email>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>Breaking</FixCategories>
+    <Owner />
+  </Rule>
+  <Rule TypeName="PresentersShouldUseProvidedBaseImplementation" Category="WebFormsMvp.Design" CheckId="MVP2101">
+    <Name>Presenters should use provided base implementation</Name>
+    <Description>All presenters should inherit from WebFormsMvp.Presenter&lt;TView&gt;. They should not implement WebFormsMvp.IPresenter or WebFormsMvp.IPresenter&lt;TView&gt; directly.</Description>
+    <Url>http://wiki.webformsmvp.com/index.php?title=CodeAnalysis:MVP2101</Url>
+    <Resolution>{0} does not inherit from WebFormsMvp.Presenter&lt;TView&gt;. Instead, it implements WebFormsMvp.IPresenter or WebFormsMvp.IPresenter&lt;TView&gt; directly. Change the type to inherit from WebFormsMvp.Presenter&lt;TView&gt;.</Resolution>
+    <Email></Email>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <FixCategories>NonBreaking</FixCategories>
+    <Owner />
+  </Rule>
+  <Rule TypeName="PresentersShouldUseConsistentViewType" Category="WebFormsMvp.Design" CheckId="MVP2102">
+    <Name>Presenters should use consistent view type</Name>
+    <Description>Presenter constructors should accept the same view type as the one specified as the presenter's generic type argument. For example, a presenter that implements WebFormsMvp.IPresenter&lt;MyApp.IMyCustomView&gt; should only expose MyApp.IMyCustomView on the constructor.</Description>
+    <Url>http://wiki.webformsmvp.com/index.php?title=CodeAnalysis:MVP2101</Url>
+    <Resolution>{0} implements WebFormsMvp.IPresenter&lt;{1}&gt; however the constructor expects a view of type {2}. Make the types consistent by updating the constructor to accept {1} or change the presenter's type definition to use {2}.</Resolution>
+    <Email></Email>
+    <MessageLevel Certainty="95">Error</MessageLevel>
+    <FixCategories>NonBreaking</FixCategories>
+    <Owner />
+  </Rule>
+  <Rule TypeName="PresentersShouldNotReplaceViewModel" Category="WebFormsMvp.Design" CheckId="MVP2106">
+    <Name>Presenters should not replace View.Model</Name>
+    <Description>Presenter code should never set the View.Model property. The framework automatically intitializes this property to its default value when the presenter is constructed. (The property setter is only public due to requirements imposed by medium trust environments.) Change your presenter code to set propeties within the model instead.</Description>
+    <Url>http://wiki.webformsmvp.com/index.php?title=CodeAnalysis:MVP2106</Url>
+    <Resolution>Change your presenter code to set propeties within the model instead.</Resolution>
+    <Email></Email>
+    <MessageLevel Certainty="95">Error</MessageLevel>
+    <FixCategories>NonBreaking</FixCategories>
+    <Owner />
+  </Rule>
+  <!--
+  
+    Under development:
+    
+    MVP1201 - View interface names should end with "View"
+    MVP1301 - Types used as view models should end with "ViewModel"
+    MVP2103 - Presenter constructors should all expose the view as the first argument and have it called "view"
+    MVP2104 - Methods overriding Presenter<TView>.ReleaseView should contain a call to remove_* for all events that have a corresponding call to add_* in the constructor at the same level of the type hierarchy
+    MVP2105 - Methods overriding Presenter<TView>.ReleaseView should not seal it (eg. public sealed override ReviewView(IView view) is bad)
+    MVP2107 – Subscribing to view events should only be done in the presenter constructor
+    MVP2201 - View types should be expressed as interfaces (ie. for Presenter<TView>, TView should be an interface)
+    MVP2202 - View interfaces should not contain properties (properties should be moved to a view model)
+    MVP2203 - View interfaces should not contain methods (method logic should be moved to presenters)
+    MVP2204 - View interfaces should not contain indexers (properties should be moved to a view model)
+    MVP2301 - Types used as view models should not contain methods
+    MVP2302 - Types used as view models should not contain events
+    MVP2303 - Types used as view models should not define custom constructors
+  
+  -->
+</Rules>

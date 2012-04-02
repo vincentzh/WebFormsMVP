@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{66023434-A9DF-465E-926A-316C85F63269}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebFormsMvp.UnitTests</RootNamespace>
+    <AssemblyName>WebFormsMvp.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\DevelopmentKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RhinoMocks.3.6\lib\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Binder\AssemblyExtensionsTests.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetAttributes_ImplicitViewType.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetAttributes_SharedPresenterWithoutExplicitViewType.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetBindings_MultipleViewInstancesWithSharedPresenterOnHost.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetBindings_MultipleViewInstancesWithSharedPresenterOnView.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetBindings_SelfHostedView.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetBindings_SingleAttributeOnHostScopedToViewInterfaceWithSingleView.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetBindings_SingleAttributeOnHostScopedToViewTypeWithSingleView.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetBindings_MultipleViewsWithSingleAttribute.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetBindings_MultipleViewsWithNoAttributes.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetBindings_SingleViewWithNoAttributes.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetBindings_SingleViewWithMultipleAttributes.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetBindings_GuardTests.cs" />
+    <Compile Include="Binder\AttributeBasedPresenterDiscoveryStrategyTests\GetBindings_SingleViewWithSingleAttribute.cs" />
+    <Compile Include="Binder\CompositePresenterDiscoveryStrategyTests.cs" />
+    <Compile Include="Binder\ConventionBasedPresenterDiscoveryStrategyTests.cs" />
+    <Compile Include="Binder\DefaultCompositeViewTypeFactoryTests.cs" />
+    <Compile Include="Binder\DefaultPresenterFactoryTests.cs" />
+    <Compile Include="Binder\PresenterBinderTests.cs" />
+    <Compile Include="CollectionExtensionsTests.cs" />
+    <Compile Include="CompositeView`TViewTests.cs" />
+    <Compile Include="MessageCoordinatorTests.cs" />
+    <Compile Include="PresenterBindingAttributeTests.cs" />
+    <Compile Include="Presenter`TViewTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelper.cs" />
+    <Compile Include="TypeExtensionsTests.cs" />
+    <Compile Include="TypeListComparerTests.cs" />
+    <Compile Include="Web\MvpHttpHandlerTests.cs" />
+    <Compile Include="Web\MvpPageTests.cs" />
+    <Compile Include="Web\MvpUserControlTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebFormsMvp\WebFormsMvp.csproj">
+      <Project>{E265BF3E-8CCB-4C22-8C15-263735227A3D}</Project>
+      <Name>WebFormsMvp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

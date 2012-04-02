@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{7C0B0C35-6615-4524-B6C5-351E7EEEB042}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\CSSFriendly.dll = Dependencies\CSSFriendly.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsMvp.ProjectSite", "WebFormsMvp.ProjectSite\WebFormsMvp.ProjectSite.csproj", "{BC36981C-F034-4F80-8957-1284906D2694}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs06.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WebFormsMvp.ProjectSite\\WebFormsMvp.ProjectSite.csproj
+		SccProjectName1 = WebFormsMvp.ProjectSite
+		SccLocalPath1 = WebFormsMvp.ProjectSite
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC36981C-F034-4F80-8957-1284906D2694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC36981C-F034-4F80-8957-1284906D2694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC36981C-F034-4F80-8957-1284906D2694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC36981C-F034-4F80-8957-1284906D2694}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
